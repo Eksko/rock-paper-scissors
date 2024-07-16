@@ -32,7 +32,10 @@ function getHumanChoice() {
 	return prompt("Write one: rock, paper or scissors")
 }
 
-function playRound(humanChoice = humanChoice.toLowerCase(), computerChoice) {
+function playRound() {
+	const humanChoice = getHumanChoice().toLowerCase()
+	const computerChoice = getComputerChoice()
+
 	const rock = "rock"
 	const paper = "paper"
 	const scissors = "scissors"
@@ -53,3 +56,14 @@ function playRound(humanChoice = humanChoice.toLowerCase(), computerChoice) {
 		console.log("Computer won!")
 	}
 }
+
+function playGame() {
+
+	for (let i = 1; i <= 5; i++) {
+		console.log(`Round: ${i}!`)
+		playRound()
+		console.log(`${humanScore} : ${computerScore}`)
+	}
+}
+
+playGame()
